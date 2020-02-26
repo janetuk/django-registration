@@ -5,10 +5,8 @@ UserModel = get_user_model
 
 
 def UserModelString():
-    try:
-        return settings.AUTH_USER_MODEL
-    except AttributeError:
-        return 'auth.User'
+
+    return settings.AUTH_USER_MODEL
 
 
 def UsernameField():
