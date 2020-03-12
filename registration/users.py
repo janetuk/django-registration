@@ -5,7 +5,6 @@ UserModel = get_user_model
 
 
 def UserModelString():
-
     return settings.AUTH_USER_MODEL
 
 
