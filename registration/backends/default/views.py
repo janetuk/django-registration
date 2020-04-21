@@ -176,5 +176,5 @@ class ResendActivationView(BaseResendActivationView):
         email = form.cleaned_data['email']
         context = {'email': email}
         return render(self.request,
-                      'registration/resend_activation_complete.html',
+                      '/application/source/src/django-registration/registration/templates/registration/resend_activation_complete.html',
                       context)

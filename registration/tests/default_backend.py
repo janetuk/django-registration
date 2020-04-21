@@ -65,7 +65,7 @@ class DefaultBackendViewTests(TestCase):
         resp = self.client.get(reverse('registration_register'))
         self.assertEqual(200, resp.status_code)
         self.assertTemplateUsed(resp,
-                                'registration/registration_form.html')
+                                '/application/source/src/django-registration/registration/templates/registration/registration_form.html')
         self.failUnless(isinstance(resp.context['form'],
                                    RegistrationForm))
 
@@ -203,7 +203,7 @@ class DefaultBackendViewTests(TestCase):
                     kwargs={'activation_key': profile.activation_key}))
 
         self.assertEqual(200, resp.status_code)
-        self.assertTemplateUsed(resp, 'registration/activate.html')
+        self.assertTemplateUsed(resp, '/application/source/src/django-registration/registration/templates/registration/activate.html')
         user = UserModel().objects.get(username='bob')
         self.assertFalse(user.is_active)
 
@@ -223,7 +223,7 @@ class DefaultBackendViewTests(TestCase):
         resp = self.client.post(reverse('registration_resend_activation'),
                                 data={'email': profile.user.email})
         self.assertTemplateUsed(resp,
-                                'registration/resend_activation_complete.html')
+                                '/application/source/src/django-registration/registration/templates/registration/resend_activation_complete.html')
         self.assertEqual(resp.context['email'], profile.user.email)
 
     def test_resend_activation_invalid_email(self):
@@ -234,4 +234,4 @@ class DefaultBackendViewTests(TestCase):
         resp = self.client.post(reverse('registration_resend_activation'),
                                 data={'email': 'invalid@example.com'})
         self.assertTemplateUsed(resp,
-                                'registration/resend_activation_complete.html')
+                                '/application/source/src/django-registration/registration/templates/registration/resend_activation_complete.html')

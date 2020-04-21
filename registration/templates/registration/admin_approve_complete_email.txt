@@ -5,7 +5,7 @@ Your account is now approved. You can log in using the following link
 http://{{site.domain}}{% url 'login' %}
 
 {% comment %}
-**registration/admin_approve_complete_email.txt**
+**/application/source/src/django-registration/registration/templates/registration/admin_approve_complete_email.txt**
 
 Used after successful account activation. This template has no context
 variables of its own, and should simply inform the user that their

@@ -1,4 +1,4 @@
-{% extends "registration/registration_base.html" %}
+{% extends "/application/source/src/django-registration/registration/templates/registration/registration_base.html" %}
 {% load i18n %}
 
 {% block title %}{% trans "Log in" %}{% endblock %}
@@ -17,11 +17,11 @@
 
 
 {% comment %}
-**registration/login.html**
+**/application/source/src/django-registration/registration/templates/registration/login.html**
 
 It's your responsibility to provide the login form in a template called
-registration/login.html by default. This template gets passed four
-template context variables:
+/application/source/src/django-registration/registration/templates/registration/login.html by default.
+This template gets passed four template context variables:
 
 ``form``
     A Form object representing the login form. See the forms

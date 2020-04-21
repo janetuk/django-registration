@@ -1,4 +1,4 @@
-{% extends "registration/registration_base.html" %}
+{% extends "/application/source/src/django-registration/registration/templates/registration/registration_base.html" %}
 {% load i18n %}
 
 {% block title %}{% trans "Activation email sent" %}{% endblock %}
@@ -9,7 +9,7 @@
 
 
 {% comment %}
-**registration/registration_complete.html**
+**/application/source/src/django-registration/registration/templates/registration/registration_complete.html**
 
 Used after successful completion of the registration form. This
 template has no context variables of its own, and should simply inform

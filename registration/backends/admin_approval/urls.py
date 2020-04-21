@@ -35,7 +35,7 @@ urlpatterns = [
         name='registration_resend_activation'),
     url(r'^activate/complete/$',
         TemplateView.as_view(
-            template_name='registration/activation_complete_admin_pending.html'
+            template_name='/application/source/src/django-registration/registration/templates/registration/activation_complete_admin_pending.html'
         ),
         name='registration_activation_complete'),
     # Activation keys get matched by \w+ instead of the more specific
@@ -48,18 +48,18 @@ urlpatterns = [
         name='registration_activate'),
     url(r'^approve/complete/$',
         TemplateView.as_view(
-            template_name='registration/admin_approve_complete.html'),
+            template_name='/application/source/src/django-registration/registration/templates/registration/admin_approve_complete.html'),
         name='registration_approve_complete'),
     url(r'^approve/(?P<profile_id>[0-9]+)/$',
         permission_required('is_superuser')(ApprovalView.as_view()),
         name='registration_admin_approve'),
     url(r'^register/complete/$',
         TemplateView.as_view(
-            template_name='registration/registration_complete.html'),
+            template_name='/application/source/src/django-registration/registration/templates/registration/registration_complete.html'),
         name='registration_complete'),
     url(r'^register/closed/$',
         TemplateView.as_view(
-            template_name='registration/registration_closed.html'),
+            template_name='/application/source/src/django-registration/registration/templates/registration/registration_closed.html'),
         name='registration_disallowed'),
 ]
 

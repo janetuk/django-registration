@@ -2,7 +2,7 @@
 
 
 {% comment %}
-**registration/admin_approve_complete_email_subject.txt**
+**/application/source/src/django-registration/registration/templates/registration/admin_approve_complete_email_subject.txt**
 
 Used to generate the subject line of the admin approval complete email. Because 
 the subject line of an email must be a single line of text, any output

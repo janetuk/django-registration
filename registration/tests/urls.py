@@ -3,7 +3,7 @@ URLs used in the unit tests for django-registration.
 
 You should not attempt to use these URLs in any sort of real or
 development environment; instead, use
-``registration/backends/default/urls.py``. This URLconf includes those
+``/application/source/src/django-registration/registration/templates/registration/backends/default/urls.py``. This URLconf includes those
 URLs, and also adds several additional URLs which serve no purpose
 other than to test that optional keyword arguments are properly
 handled.
@@ -22,7 +22,7 @@ urlpatterns = [
     # name.
     url(r'^activate-with-template-name/(?P<activation_key>\w+)/$',
         ActivationView.as_view(),
-        {'template_name': 'registration/test_template_name.html',
+        {'template_name': '/application/source/src/django-registration/registration/templates/registration/test_template_name.html',
          'backend': 'registration.backends.default.DefaultBackend'},
         name='registration_test_activate_template_name'),
     # Test the 'activate' view with
@@ -42,7 +42,7 @@ urlpatterns = [
     # name.
     url(r'^register-with-template-name/$',
         RegistrationView.as_view(),
-        {'template_name': 'registration/test_template_name.html',
+        {'template_name': '/application/source/src/django-registration/registration/templates/registration/test_template_name.html',
          'backend': 'registration.backends.default.DefaultBackend'},
         name='registration_test_register_template_name'),
     # Test the'register' view with extra_context
@@ -62,7 +62,7 @@ urlpatterns = [
     # Set up a pattern which will correspond to the
     # custom 'disallowed_url' above.
     url(r'^custom-disallowed/$',
-        TemplateView.as_view(template_name='registration/registration_closed.html'),
+        TemplateView.as_view(template_name='/application/source/src/django-registration/registration/templates/registration/registration_closed.html'),
         name='registration_test_custom_disallowed'),
     # Test the 'register' view with custom redirect
     # on successful registration.
@@ -73,7 +73,7 @@ urlpatterns = [
         name='registration_test_register_success_url'),
     # Pattern for custom redirect set above.
     url(r'^custom-success/$',
-        TemplateView.as_view(template_name='registration/test_template_name.html'),
+        TemplateView.as_view(template_name='/application/source/src/django-registration/registration/templates/registration/test_template_name.html'),
         name='registration_test_custom_success_url'),
     url(r'', include('registration.backends.default.urls')),
 ]

@@ -1,4 +1,4 @@
-{% extends "registration/registration_base.html" %}
+{% extends "/application/source/src/django-registration/registration/templates/registration/registration_base.html" %}
 {% load i18n %}
 
 {% block title %}{% trans "Activation Failure" %}{% endblock %}
@@ -9,7 +9,7 @@
 
 
 {% comment %}
-**registration/activate.html**
+**/application/source/src/django-registration/registration/templates/registration/activate.html**
 
 Used if account activation fails. With the default setup, has the following context:
 

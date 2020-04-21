@@ -29,7 +29,7 @@ class RegistrationView(FormView):
     form_class = REGISTRATION_FORM
     http_method_names = ['get', 'post', 'head', 'options', 'trace']
     success_url = None
-    template_name = 'registration/registration_form.html'
+    template_name = '/application/source/src/django-registration/registration/templates/registration/registration_form.html'
 
     @method_decorator(sensitive_post_parameters('password1', 'password2'))
     def dispatch(self, request, *args, **kwargs):
@@ -95,7 +95,7 @@ class ActivationView(TemplateView):
 
     """
     http_method_names = ['get']
-    template_name = 'registration/activate.html'
+    template_name = '/application/source/src/django-registration/registration/templates/registration/activate.html'
 
     def get(self, request, *args, **kwargs):
         activated_user = self.activate(*args, **kwargs)
@@ -125,7 +125,7 @@ class ResendActivationView(FormView):
     Base class for resending activation views.
     """
     form_class = ResendActivationForm
-    template_name = 'registration/resend_activation_form.html'
+    template_name = '/application/source/src/django-registration/registration/templates/registration/resend_activation_form.html'
 
     def form_valid(self, form):
         """
@@ -153,7 +153,7 @@ class ResendActivationView(FormView):
 class ApprovalView(TemplateView):
 
     http_method_names = ['get']
-    template_name = 'registration/admin_approve.html'
+    template_name = '/application/source/src/django-registration/registration/templates/registration/admin_approve.html'
 
     def get(self, request, *args, **kwargs):
         approved_user = self.approve(*args, **kwargs)

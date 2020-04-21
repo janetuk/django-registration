@@ -29,11 +29,11 @@ from django.urls import reverse_lazy
 urlpatterns = [
     url(r'^login/$',
         auth_views.LoginView.as_view(
-            template_name='registration/login.html'),
+            template_name='/application/source/src/django-registration/registration/templates/registration/login.html'),
         name='auth_login'),
     url(r'^logout/$',
         auth_views.LogoutView.as_view(
-            template_name='registration/logout.html'),
+            template_name='/application/source/src/django-registration/registration/templates/registration/logout.html'),
         name='auth_logout'),
     url(r'^password/change/$',
         auth_views.PasswordChangeView.as_view(

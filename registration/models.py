@@ -408,11 +408,11 @@ class RegistrationProfile(models.Model):
             flexibility via ``RequestContext``.
         """
         activation_email_subject = getattr(settings, 'ACTIVATION_EMAIL_SUBJECT',
-                                           'registration/activation_email_subject.txt')
+                                           '/application/source/src/django-registration/registration/templates/registration/activation_email_subject.txt')
         activation_email_body = getattr(settings, 'ACTIVATION_EMAIL_BODY',
-                                        'registration/activation_email.txt')
+                                        '/application/source/src/django-registration/registration/templates/registration/activation_email.txt')
         activation_email_html = getattr(settings, 'ACTIVATION_EMAIL_HTML',
-                                        'registration/activation_email.html')
+                                        '/application/source/src/django-registration/registration/templates/registration/activation_email.html')
 
         ctx_dict = {
             'user': self.user,
@@ -584,17 +584,17 @@ class SupervisedRegistrationManager(RegistrationManager):
         admin_approve_email_subject = getattr(
             settings,
             'ADMIN_APPROVAL_EMAIL_SUBJECT',
-            'registration/admin_approve_email_subject.txt'
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_email_subject.txt'
         )
         admin_approve_email_body = getattr(
             settings,
             'ADMIN_APPROVAL_EMAIL_BODY',
-            'registration/admin_approve_email.txt'
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_email.txt'
         )
         admin_approve_email_html = getattr(
             settings,
             'ADMIN_APPROVAL_EMAIL_HTML',
-            'registration/admin_approve_email.html'
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_email.html'
         )
 
         ctx_dict = {
@@ -678,13 +678,13 @@ class SupervisedRegistrationProfile(RegistrationProfile):
         """
         admin_approve_complete_email_subject = getattr(
             settings, 'APPROVAL_COMPLETE_EMAIL_SUBJECT',
-            'registration/admin_approve_complete_email_subject.txt')
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_complete_email_subject.txt')
         admin_approve_complete_email_body = getattr(
             settings, 'APPROVAL_COMPLETE_EMAIL_BODY',
-            'registration/admin_approve_complete_email.txt')
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_complete_email.txt')
         admin_approve_complete_email_html = getattr(
             settings, 'APPROVAL_COMPLETE_EMAIL_HTML',
-            'registration/admin_approve_complete_email.html')
+            '/application/source/src/django-registration/registration/templates/registration/admin_approve_complete_email.html')
 
         ctx_dict = {
             'user': self.user.get_username(),

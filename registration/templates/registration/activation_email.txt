@@ -18,7 +18,7 @@ Sincerely,
 
 
 {% comment %}
-**registration/activation_email.txt**
+**/application/source/src/django-registration/registration/templates/registration/activation_email.txt**
 
 Used to generate the text body of the activation email. Should display a
 link the user can click to activate the account. This template has the
