@@ -25,11 +25,12 @@ class RegistrationView(FormView):
     Base class for user registration views.
 
     """
-    disallowed_url = 'registration_disallowed'
-    form_class = REGISTRATION_FORM
+    disallowed_url    = 'registration_disallowed'
+    form_class        = REGISTRATION_FORM
     http_method_names = ['get', 'post', 'head', 'options', 'trace']
-    success_url = None
-    template_name = '/application/source/src/django-registration/registration/templates/registration/registration_form.html'
+    success_url       = None
+    template_name     = '/application/source/src/django-registration/registration/templates/registration/registration_form.html'
+    activation_url    = None
 
     @method_decorator(sensitive_post_parameters('password1', 'password2'))
     def dispatch(self, request, *args, **kwargs):

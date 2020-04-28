@@ -83,25 +83,18 @@ class RegistrationView(BaseRegistrationView):
         ``registration.signals.user_registered`` will be sent, with
         the new ``User`` as the keyword argument ``user`` and the
         class of this backend as the sender.
-
         """
         site = get_current_site(self.request)
 
         if hasattr(form, 'save'):
             new_user_instance = form.save()
         else:
-            new_user_instance = (UserModel().objects
-                                 .create_user(**form.cleaned_data))
+            new_user_instance = (UserModel().objects.create_user(**form.cleaned_data))
 
-        new_user = self.registration_profile.objects.create_inactive_user(
-            new_user=new_user_instance,
-            site=site,
-            send_email=self.SEND_ACTIVATION_EMAIL,
-            request=self.request,
-        )
-        signals.user_registered.send(sender=self.__class__,
-                                     user=new_user,
-                                     request=self.request)
+        new_user = self.registration_profile.objects.create_inactive_user(new_user=new_user_instance, site=site, send_email=self.SEND_ACTIVATION_EMAIL, request=self.request)
+
+        signals.user_registered.send(sender=self.__class__, user=new_user, request=self.request)
+
         return new_user
 
     def registration_allowed(self):
